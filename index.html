@@ -1,0 +1,22 @@
+<html ng-app="BitSight">
+    <head>
+        <meta charset="utf-8">
+        <title>GitHub API</title>
+        
+        
+        <script src="//cdn.jsdelivr.net/jquery/2.2.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+        <script src="/app.js"></script>
+    </head>
+    <body>
+        <div ng-controller="githubCtrl">
+            
+            <button id="hot_repo" ng-click="loadStarUsers()">Refresh</button>
+            <div ng-repeat="repo in starUsers"><span>{{repo.id}}</span> - <span>{{repo.full_name}}</span> - <span>{{repo.description}}</span> - <span>{{repo.stargazers_count}}</span></div>
+            
+            <button id="prolific_users" ng-click="loadProlificUsers()">Refresh</button>
+            <div ng-repeat="user in prolificUsers"><span>{{user.id}}</span> - <span>{{user.login}}</span> - <span>{{user.avatar_url}}</span> - <span>{{repo.stargazers_count}}</span></div>
+            
+        </div>
+    </body>
+</html>
